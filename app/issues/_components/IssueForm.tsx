@@ -39,6 +39,7 @@ const NewIssuePage = ({ issue }: { issue?: Issue }) => {
       else await axios.post("/api/issues", data);
 
       router.push("/issues");
+      router.refresh();
     } catch (error) {
       setSubbmitting(false);
       setError("Unexpected error occured.");
